@@ -1,0 +1,21 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KafkaTest", "KafkaTest\KafkaTest.csproj", "{94EAD971-4059-4A20-8D18-F7C6DE044D3E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Utils", "Utils", "{9A60FAB0-64D1-45F7-9917-6DEEF5EA63F7}"
+	ProjectSection(SolutionItems) = preProject
+		docker-compose.yaml = docker-compose.yaml
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{94EAD971-4059-4A20-8D18-F7C6DE044D3E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94EAD971-4059-4A20-8D18-F7C6DE044D3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94EAD971-4059-4A20-8D18-F7C6DE044D3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94EAD971-4059-4A20-8D18-F7C6DE044D3E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
