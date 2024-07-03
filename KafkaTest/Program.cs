@@ -1,23 +1,42 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿using Confluent.Kafka;
 
-using KafkaNet;
-using KafkaNet.Model;
-using KafkaNet.Protocol;
+const string topic = "purchases";
 
-Uri uri = new Uri("http://localhost:9092");
-var topicName = "amogus";
-var message = "Topiiiiiiicccccc";
-var payload = message.Trim();
-Console.WriteLine("Hello, World!");
+string[] users = { "eabara", "jsmith", "sgarcia", "jbernard", "htanaka", "awalther" };
+string[] items = { "book", "alarm clock", "t-shirts", "gift card", "batteries" };
 
-var sendMessage = new Thread(() =>
+var config = new ProducerConfig
 {
-   var msg = new Message(payload);
-   var options = new KafkaOptions(uri);
-   var router = new BrokerRouter(options);
-   var client = new Producer(router);
+    // User-specific properties that you must set
+    BootstrapServers = "localhost:9092",
 
-   client.SendMessageAsync(topicName, new List<Message>() { msg }, 0).Wait();
-});
+    // Fixed properties
+    Acks = Acks.All
+};
 
-sendMessage.Start();
+using (var producer = new ProducerBuilder<string, string>(config).Build())
+{
+    var numProduced = 0;
+    Random rnd = new Random();
+    const int numMessages = 10;
+    for (int i = 0; i < numMessages; ++i)
+    {
+        var user = users[rnd.Next(users.Length)];
+        var item = items[rnd.Next(items.Length)];
+
+        producer.Produce(topic, new Message<string, string> { Key = user, Value = item },
+            (deliveryReport) =>
+            {
+                if (deliveryReport.Error.Code != ErrorCode.NoError) {
+                    Console.WriteLine($"Failed to deliver message: {deliveryReport.Error.Reason}");
+                }
+                else {
+                    Console.WriteLine($"Produced event to topic {topic}: key = {user,-10} value = {item}");
+                    numProduced += 1;
+                }
+            });
+    }
+
+    producer.Flush(TimeSpan.FromSeconds(10));
+    Console.WriteLine($"{numProduced} messages were produced to topic {topic}");
+}
