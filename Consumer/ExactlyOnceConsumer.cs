@@ -2,7 +2,7 @@
 
 namespace Consumer;
 
-public class AtLeastOnceConsumer
+public class ExactlyOnceConsumer
 {
     public void Consume(string topicName, string groupName, CancellationTokenSource cancellationTokenSource)
     {
@@ -47,5 +47,4 @@ public class AtLeastOnceConsumer
             consumer.Close();
         }
     }
-    
 }

@@ -31,6 +31,6 @@ public class Producer
         }
     
         producer.Flush(TimeSpan.FromSeconds(10));
-        Console.WriteLine($"{numProduced} messages were produced to topic {topicName}, acks: {producerConfig.Acks.Value.ToString()}");
+        Console.WriteLine($"{numProduced} messages were produced to topic {topicName}, acks: {producerConfig.Acks!.Value.ToString()}");
     }
 }
