@@ -20,6 +20,7 @@ switch (acksNum)
     case AcksEnum.All:
         config.BootstrapServers = "localhost:9092";
         config.Acks = Acks.All;
+        config.EnableIdempotence = true;
         break;
     case AcksEnum.Leader:
         config.BootstrapServers = "localhost:9092";

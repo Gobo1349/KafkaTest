@@ -9,6 +9,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Utils", "Utils", "{9A60FAB0
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Consumer", "Consumer\Consumer.csproj", "{244E607D-A556-466F-BBA7-FDC29B95D5DA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExactlyOnceTest", "ExactlyOnceTest\ExactlyOnceTest.csproj", "{77CEBD34-50DB-479A-B510-63C3544202F8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,5 +25,9 @@ Global
 		{244E607D-A556-466F-BBA7-FDC29B95D5DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{244E607D-A556-466F-BBA7-FDC29B95D5DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{244E607D-A556-466F-BBA7-FDC29B95D5DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77CEBD34-50DB-479A-B510-63C3544202F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77CEBD34-50DB-479A-B510-63C3544202F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77CEBD34-50DB-479A-B510-63C3544202F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77CEBD34-50DB-479A-B510-63C3544202F8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
